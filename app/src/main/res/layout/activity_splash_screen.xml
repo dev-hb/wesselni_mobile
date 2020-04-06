@@ -12,7 +12,7 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        app:lottie_autoPlay="true"
-       app:lottie_fileName="data.json"
+       app:lottie_fileName="splash.json"
        app:lottie_loop="true"
 
        tools:ignore="MissingConstraints" />
@@ -26,7 +26,8 @@
        android:text="Wesselni"
        android:textAlignment="center"
        android:textColor="#CA2C27"
-       android:textSize="40sp"
+       android:layout_marginTop="100dp"
+       android:textSize="32sp"
        android:textStyle="bold"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +39,7 @@
        android:id="@+id/textView3"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:fontFamily="@font/roboto_thin"
+       android:fontFamily="roboto"
        android:text="Developed By DevCrawlers"
        android:textColor="#3F0302"
        android:textSize="18sp"
