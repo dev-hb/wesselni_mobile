@@ -21,8 +21,13 @@ public class LoginActivity extends AppCompatActivity {
         Log.d("info", "Button login pressed!");
     }
 
-    public  void goRegister(View view){
+    public void goRegister(View view){
         Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+    public void goPasswordReset(View view){
+        Intent intent = new Intent(this, PasswordResetActivity.class);
         startActivity(intent);
     }
 }
