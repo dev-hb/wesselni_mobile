@@ -86,13 +86,24 @@
 
         <Button
             android:id="@+id/btnLogin"
+            style="@style/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/loginButton"
             android:layout_gravity="right"
-            android:onClick="doLogin"
             android:layout_marginTop="@dimen/loginViewsMargin"
+            android:onClick="doLogin"
             android:text="Se connecter" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="60dp"
+            android:visibility="gone"
+            android:layout_marginTop="20dp"
+            />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

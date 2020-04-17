@@ -43,8 +43,8 @@ public abstract class DataConnection {
     private StringRequest stringRequest;
     private JsonObjectRequest jsonObjectRequest;
 
-    public DataConnection(Context context, String url) {
-        this.URL = URL;
+    public DataConnection(Context context,String subURL) {
+        this.URL = Provider.url+subURL;
         this.context = context;
         params = new HashMap<>();
         methode = Method.POST;
@@ -52,8 +52,17 @@ public abstract class DataConnection {
         AppHeader = new HashMap<>();
     }
 
-    public DataConnection(Context context, String url, int method) {
-        this.URL = URL;
+    public DataConnection(Context context, String url,String subURL) {
+        this.URL = url+subURL;
+        this.context = context;
+        params = new HashMap<>();
+        methode = Method.POST;
+        header = Header.JSON;
+        AppHeader = new HashMap<>();
+    }
+
+    public DataConnection(Context context, String url,String subURL ,int method) {
+        this.URL = url+subURL;
         this.context = context;
         params = new HashMap<>();
         this.methode = method;
@@ -61,8 +70,8 @@ public abstract class DataConnection {
         AppHeader = new HashMap<>();
     }
 
-    public DataConnection(Context context, String url, int method, String header) {
-        this.URL = URL;
+    public DataConnection(Context context, String url,String subURL , int method, String header) {
+        this.URL = url+subURL;
         this.context = context;
         params = new HashMap<>();
         this.methode = method;
@@ -101,16 +110,10 @@ public abstract class DataConnection {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            onError(error.getMessage());
+                            onError(new String(error.networkResponse.data));
                             after();
                         }
-                    }) {
-                @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
-                    AppHeader.put("Content-Type", "application/json; charset=utf-8");
-                    return AppHeader;
-                }
-            };
+                    }) ;
             before();
             Volley.newRequestQueue(context).add(jsonObjectRequest);
         }
