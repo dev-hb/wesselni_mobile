@@ -12,6 +12,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -26,6 +27,7 @@ public abstract class DataConnection {
         public static final int GET = Request.Method.GET;
         public static final int POST = Request.Method.POST;
     }
+
     //data type.
     public enum Header {
         ;
@@ -43,8 +45,8 @@ public abstract class DataConnection {
     private StringRequest stringRequest;
     private JsonObjectRequest jsonObjectRequest;
 
-    public DataConnection(Context context,String subURL) {
-        this.URL = Provider.url+subURL;
+    public DataConnection(Context context, String subURL) {
+        this.URL = Provider.url + subURL;
         this.context = context;
         params = new HashMap<>();
         methode = Method.POST;
@@ -52,8 +54,17 @@ public abstract class DataConnection {
         AppHeader = new HashMap<>();
     }
 
-    public DataConnection(Context context, String url,String subURL) {
-        this.URL = url+subURL;
+    public DataConnection(Context context, String subURL, int methode) {
+        this.URL = Provider.url + subURL;
+        this.context = context;
+        params = new HashMap<>();
+        this.methode = methode;
+        header = Header.JSON;
+        AppHeader = new HashMap<>();
+    }
+
+    public DataConnection(Context context, String url, String subURL) {
+        this.URL = url + subURL;
         this.context = context;
         params = new HashMap<>();
         methode = Method.POST;
@@ -61,8 +72,8 @@ public abstract class DataConnection {
         AppHeader = new HashMap<>();
     }
 
-    public DataConnection(Context context, String url,String subURL ,int method) {
-        this.URL = url+subURL;
+    public DataConnection(Context context, String url, String subURL, int method) {
+        this.URL = url + subURL;
         this.context = context;
         params = new HashMap<>();
         this.methode = method;
@@ -70,8 +81,8 @@ public abstract class DataConnection {
         AppHeader = new HashMap<>();
     }
 
-    public DataConnection(Context context, String url,String subURL , int method, String header) {
-        this.URL = url+subURL;
+    public DataConnection(Context context, String url, String subURL, int method, String header) {
+        this.URL = url + subURL;
         this.context = context;
         params = new HashMap<>();
         this.methode = method;
@@ -94,12 +105,18 @@ public abstract class DataConnection {
                     onError(error.getMessage());
                     after();
                 }
-            });
+            }){
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    AppHeader.put("Content-Type", "application/json; charset=utf-8");
+                    return AppHeader;
+                }
+            };
             before();
             Volley.newRequestQueue(context).add(stringRequest);
         }
         if (header == Header.JSON) {
-            jsonObjectRequest = new JsonObjectRequest(Method.POST, URL, new JSONObject(params),
+            jsonObjectRequest = new JsonObjectRequest(methode, URL, new JSONObject(params),
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
@@ -113,15 +130,22 @@ public abstract class DataConnection {
                             onError(new String(error.networkResponse.data));
                             after();
                         }
-                    }) ;
+                    }) {
+
+
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    AppHeader.put("Content-Type", "application/json; charset=utf-8");
+                    return AppHeader;
+                }
+
+            };
             before();
             Volley.newRequestQueue(context).add(jsonObjectRequest);
         }
 
 
-
     }
-
 
 
     public void setHeader(String header) {
@@ -133,17 +157,20 @@ public abstract class DataConnection {
         return this;
     }
 
-    public DataConnection addAppHearder(String key,String val){
-        AppHeader.put(key,val);
+    public DataConnection addAppHearder(String key, String val) {
+        AppHeader.put(key, val);
         return this;
     }
 
     //befor connection is start this method will execute
     public abstract void before();
+
     //affter Connection is finish this methode will execute
     public abstract void after();
+
     //when connection is finish this method will execute
     public abstract void onFinish(String reponse);
+
     //when an error this methode will execute
     public abstract void onError(String error);
 }

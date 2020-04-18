@@ -62,10 +62,12 @@ public class LoginActivity extends AppCompatActivity {
                         //i save the token in the Preferances..
                        saveToken(jsonObjectRespance.getString("token"));
 
-                        SharedPreferences sharedPref = LoginActivity.this.getPreferences(Context.MODE_PRIVATE);
+                       SharedPreferences sharedPref = getSharedPreferences("tokenRef",Context.MODE_PRIVATE);
                         String token=sharedPref.getString("token","null");
+                      // Toast.makeText(LoginActivity.this,"You connected sexesFully"+token,Toast.LENGTH_LONG).show();
 
-                       Toast.makeText(LoginActivity.this,"You connected sexesFully"+token,Toast.LENGTH_LONG).show();
+                       Intent it=new Intent(LoginActivity.this,testAct.class);
+                        startActivity(it);
                     }
                 }catch (Exception e){
                     e.printStackTrace();
@@ -95,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void saveToken(String token) {
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("tokenRef",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("token", token);
         editor.commit();
