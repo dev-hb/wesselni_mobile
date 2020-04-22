@@ -30,8 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         editTextLogin=(EditText) findViewById(R.id.email);
         editTextPassword=(EditText) findViewById(R.id.password);
-        editTextLogin.setText("goulzimaamin@gmail.com");
-        editTextPassword.setText("azerty123");
         buttonLogin=(Button) findViewById(R.id.btnLogin);
         progressBar=(ProgressBar) findViewById(R.id.progressBar);
 

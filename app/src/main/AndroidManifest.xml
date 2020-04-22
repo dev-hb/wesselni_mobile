@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".testAct"></activity>
+        <activity android:name=".RegisterStep2Activity"></activity>
+        <activity android:name=".testAct" />
         <activity
             android:name=".PasswordResetActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -34,7 +35,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

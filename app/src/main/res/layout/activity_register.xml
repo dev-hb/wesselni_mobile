@@ -30,6 +30,21 @@
             android:text="Créer un compte" />
 
         <TextView
+            android:id="@+id/textCin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="CIN (carte nationale)" />
+
+        <EditText
+            android:id="@+id/cin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="6"
+            android:hint="ua114473"
+            android:text="ua4885" />
+
+        <TextView
             android:id="@+id/textEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,8 +56,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="6"
+            android:hint="john@something.xyz"
             android:inputType="textEmailAddress"
-            android:hint="john@something.xyz"/>
+            android:text="zakaeaz@gmail.com" />
 
         <TextView
             android:id="@+id/textPassword"
@@ -57,7 +73,8 @@
             android:layout_height="wrap_content"
             android:ems="6"
             android:hint="mot de passe"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:text="hba888888" />
 
         <TextView
             android:id="@+id/textPassword2"
@@ -72,7 +89,8 @@
             android:layout_height="wrap_content"
             android:ems="6"
             android:hint="mot de passe"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:text="hba888888" />
 
         <TextView
             android:id="@+id/signUp"
@@ -85,14 +103,25 @@
             android:textColor="@color/primaryTextColor" />
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/loginButton"
             android:layout_gravity="right"
-            android:onClick="doRgister"
+            android:onClick="doRegister"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:text="S\'enregister" />
+
+        <ProgressBar
+            android:id="@+id/registerProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="60dp"
+            android:visibility="gone"
+            android:layout_marginTop="20dp"
+            />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
