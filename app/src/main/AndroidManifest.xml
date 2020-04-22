@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RegisterStep2Activity"></activity>
+        <activity android:name=".RegisterStep2Activity" />
         <activity android:name=".testAct" />
         <activity
             android:name=".PasswordResetActivity"

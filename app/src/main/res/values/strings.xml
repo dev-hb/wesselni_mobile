@@ -24,4 +24,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Values used in the Spinner of account type in Profile Fragment -->
+    <string-array name="types">
+        <item>Conducteur</item>
+        <item>Passager</item>
+    </string-array>
 </resources>
