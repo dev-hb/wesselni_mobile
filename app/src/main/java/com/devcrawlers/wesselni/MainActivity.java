@@ -114,6 +114,8 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.nav_host_fragment, new ProfileFragment());
         } else if (id == R.id.nav_offer) {
             transaction.replace(R.id.nav_host_fragment, new OffreFragment());
+        }else if (id == R.id.nav_request) {
+            transaction.replace(R.id.nav_host_fragment, new RequestFragment());
         }
 
         transaction.commit();
