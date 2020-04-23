@@ -14,9 +14,9 @@ public class testAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
         SharedPreferences sharedPref = getSharedPreferences("tokenRef",Context.MODE_PRIVATE);
-        String token=sharedPref.getString("token","null");
+    String token=sharedPref.getString("token","null");
         Toast.makeText(testAct.this,"You connected sexesFully"+token,Toast.LENGTH_LONG).show();;
 
 
-    }
+}
 }

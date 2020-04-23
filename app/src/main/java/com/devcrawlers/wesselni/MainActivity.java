@@ -3,6 +3,7 @@ package com.devcrawlers.wesselni;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.devcrawlers.wesselni.ui.home.HomeFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment,new OffreFragment());
+        fragmentTransaction.replace(R.id.nav_host_fragment, new HomeFragment());
         fragmentTransaction.commit();
     }
 
@@ -81,12 +82,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        if (menuItem.getItemId() == R.id.nav_home) {
-            Log.wtf("hello","yOU CLIKED ON ME");
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.nav_host_fragment, new OffreFragment());
-            ft.commit();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+        switch (menuItem.getItemId()){
+            case R.id.nav_home: ft.replace(R.id.nav_host_fragment, new OffreFragment()); break;
+            case R.id.profile_fragment: ft.replace(R.id.nav_host_fragment, new ProfileFragment()); break;
         }
-        return false;
+
+        ft.commit();
+        return true;
     }
 }

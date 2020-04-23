@@ -5,287 +5,305 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment">
-    <LinearLayout
-        android:orientation="vertical"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:padding="20dp"
-            android:background="#0C6491"
-            >
-            <ImageView
-                android:id="@+id/profile_img"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/profile"
-                android:layout_centerVertical="true"/>
-            <TextView
-                android:id="@+id/full_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Anas RIANI"
-                android:textSize="30sp"
-                android:layout_toRightOf="@id/profile_img"
-                android:layout_centerVertical="true"
-                android:includeFontPadding="false"
-                android:textColor="@color/whiteCardColor"
-                android:layout_marginLeft="10dp"/>
-            <TextView
-                android:id="@+id/type_of_account"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Conducteur"
-                android:textSize="20sp"
-                android:textColor="@color/whiteCardColor"
-                android:includeFontPadding="false"
-                android:layout_toRightOf="@id/profile_img"
-                android:layout_below="@id/full_name"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"/>
-        </RelativeLayout>
+
         <LinearLayout
-            android:layout_marginTop="-100dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            >
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="125dp"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="#012336"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                app:cardElevation="12dp">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#0C6491"
-                    android:padding="5dp">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_marginTop="5sp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/star"/>
-                    <TextView
-                        android:id="@+id/value_rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="5.5"
-                        android:layout_centerInParent="true"
-                        android:textSize="20sp"
-                        android:textColor="@color/whiteTextColor"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rating"
-                        android:layout_centerInParent="true"
-                        android:textSize="20sp"
-                        android:layout_below="@id/value_rating"
-                        android:layout_marginTop="5sp"
-                        android:textColor="@color/whiteTextColor"
-                        />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="125dp"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="#0C6491"
-                app:cardElevation="10dp"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                >
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#0C6491"
-                    android:padding="5dp">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_marginTop="5sp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/sale"/>
-                    <TextView
-                        android:id="@+id/value_offers"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="25"
-                        android:layout_centerInParent="true"
-                        android:textSize="20sp"
-                        android:textColor="@color/whiteTextColor"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Offres"
-                        android:layout_centerInParent="true"
-                        android:textSize="20sp"
-                        android:layout_below="@id/value_offers"
-                        android:layout_marginTop="5sp"
-                        android:textColor="@color/whiteTextColor"
-                        />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
+            android:orientation="vertical">
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/profile_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <com.google.android.material.textfield.TextInputLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Prénom">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/first_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/name"
-                    android:drawablePadding="10dp">
-
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Nom">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/name"
-                    android:drawablePadding="10dp">
-
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Télephone">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/call"
-                    android:drawablePadding="10dp">
-
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Adresse">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/address"
-                    android:drawablePadding="10dp">
-
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Ville">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/city"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/enterprise"
-                    android:drawablePadding="10dp">
-
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Code Postal"
-
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/zip"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/post"
-                    android:drawablePadding="10dp">
-
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Email">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/mail"
-                    android:drawablePadding="10dp">
-
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="27dp"
-                android:text="Type de compte"></TextView>
-
-            <Spinner
-                android:id="@+id/account_type"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:backgroundTint="#ff0000"
-                android:entries="@array/types"
-                android:overlapAnchor="false"
-                android:spinnerMode="dropdown" />
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="300dp"
                 android:background="#0C6491"
-                android:text="Sauvegarder"
-                android:textColor="#FFFFFF"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                android:textSize="26sp">
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/profile_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/profile" />
+
+                <TextView
+                    android:id="@+id/full_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/profile_img"
+                    android:includeFontPadding="false"
+                    android:text="Anas RIANI"
+                    android:textColor="@color/whiteCardColor"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/type_of_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/full_name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/profile_img"
+                    android:includeFontPadding="false"
+                    android:text="Conducteur"
+                    android:textColor="@color/whiteCardColor"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-100dp"
+                android:padding="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="#012336"
+                    app:cardElevation="12dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#0C6491"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5sp"
+                            android:src="@drawable/star" />
+
+                        <TextView
+                            android:id="@+id/value_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="5.5"
+                            android:textColor="@color/whiteTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/value_rating"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="5sp"
+                            android:text="Rating"
+                            android:textColor="@color/whiteTextColor"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="#0C6491"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#0C6491"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5sp"
+                            android:src="@drawable/sale" />
+
+                        <TextView
+                            android:id="@+id/value_offers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="25"
+                            android:textColor="@color/whiteTextColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/value_offers"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="5sp"
+                            android:text="Offres"
+                            android:textColor="@color/whiteTextColor"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Prénom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/name"
+                        android:drawablePadding="10dp">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Nom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/name"
+                        android:drawablePadding="10dp">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Télephone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/call"
+                        android:drawablePadding="10dp">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Adresse">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/address"
+                        android:drawablePadding="10dp">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Ville">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/enterprise"
+                        android:drawablePadding="10dp">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Code Postal"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/zip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/post"
+                        android:drawablePadding="10dp">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-            </com.google.android.material.button.MaterialButton>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Email">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/mail"
+                        android:drawablePadding="10dp">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="27dp"
+                    android:text="Type de compte"></TextView>
+
+
+                <Spinner
+                    android:id="@+id/account_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#ff0000"
+                    android:entries="@array/types"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:text="Sauvegarder"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:background="#0C6491"
+                    android:textColor="#FFFFFF"
+                    >
+
+                </Button>
+
+            </LinearLayout>
 
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
+
 </FrameLayout>

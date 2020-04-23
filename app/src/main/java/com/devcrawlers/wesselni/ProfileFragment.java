@@ -8,8 +8,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 
@@ -24,7 +26,8 @@ public class ProfileFragment extends Fragment {
 
 
     // EditText fields
-    EditText first_name, last_name , phone , email, adresse, city, zip, account_type;
+    EditText first_name, last_name , phone , email, adresse, city, zip;
+    Spinner account_type;
     ImageView profileImg;
 
     public ProfileFragment() {
@@ -78,7 +81,10 @@ public class ProfileFragment extends Fragment {
                     adresse.setText(userObject.getString("adresse"));
                     zip.setText(userObject.getString("zip_code"));
                     phone.setText(userObject.getString("phone"));
-                    account_type.setText(userObject.getString("account_type"));
+                    ArrayAdapter arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,
+                            new String[]{userObject.getString("account_type")});
+                    arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    account_type.setAdapter(arrayAdapter);
                     city.setText(userObject.getString("city"));
 
                     /*
