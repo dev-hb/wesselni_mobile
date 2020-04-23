@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                         String token=sharedPref.getString("token","null");
                       // Toast.makeText(LoginActivity.this,"You connected sexesFully"+token,Toast.LENGTH_LONG).show();
 
-                       Intent it=new Intent(LoginActivity.this,testAct.class);
+                       Intent it=new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(it);
                     }
                 }catch (Exception e){

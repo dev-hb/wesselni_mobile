@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ import java.util.zip.Inflater;
 public class OffreFragment extends Fragment {
     private ListView listViewOffre;
     private ArrayList<Offer> offerArrayList;
+    ProgressBar progressBar;
 
     public OffreFragment() {
         // Required empty public constructor
@@ -47,6 +49,9 @@ public class OffreFragment extends Fragment {
                              Bundle savedInstanceState) {
         View myInflater = inflater.inflate(R.layout.fragment_offre, container, false);
         listViewOffre = (ListView) myInflater.findViewById(R.id.listtViewOffre);
+
+        progressBar = (ProgressBar) myInflater.findViewById(R.id.progressBarOffer);
+
         offerArrayList=new ArrayList<>();
         getOffres();
         return myInflater;
@@ -62,7 +67,7 @@ public class OffreFragment extends Fragment {
 
             @Override
             public void after() {
-
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
