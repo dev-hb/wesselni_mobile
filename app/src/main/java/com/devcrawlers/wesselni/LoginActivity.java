@@ -33,6 +33,9 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin=(Button) findViewById(R.id.btnLogin);
         progressBar=(ProgressBar) findViewById(R.id.progressBar);
 
+        editTextLogin.setText("zakaria.hba.97@gmail.com");
+        editTextPassword.setText("hba7222000");
+
 
     }
 
@@ -64,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                         String token=sharedPref.getString("token","null");
                       // Toast.makeText(LoginActivity.this,"You connected sexesFully"+token,Toast.LENGTH_LONG).show();
 
-                       Intent it=new Intent(LoginActivity.this,testAct.class);
+                       Intent it=new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(it);
                     }
                 }catch (Exception e){

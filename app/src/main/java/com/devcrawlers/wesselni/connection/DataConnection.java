@@ -127,7 +127,12 @@ public abstract class DataConnection {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            onError(new String(error.networkResponse.data));
+                            if(error.networkResponse!=null){
+                                onError(new String(error.networkResponse.data));
+                            }else{
+                                onError(error.getMessage());
+                            }
+
                             after();
                         }
                     }) {

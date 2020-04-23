@@ -5,6 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".OffreFragment">
 
+
+    <ProgressBar
+        android:id="@+id/progressBarOffer"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        />
+
     <ListView
         android:id="@+id/listtViewOffre"
         android:layout_width="match_parent"
