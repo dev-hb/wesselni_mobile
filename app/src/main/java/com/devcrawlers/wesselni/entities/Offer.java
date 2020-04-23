@@ -1,0 +1,113 @@
+package com.devcrawlers.wesselni.entities;
+
+import java.util.Date;
+
+public class Offer {
+    private int id;
+    private String startCity,targetCity,addrese;
+    private Date dateTime;
+    private boolean state;
+    private int User_id,nbPlace;
+    private String loglat;
+
+    public Offer(int id, String startCity, String targetCity, String addrese, Date dateTime, boolean state, int user_id, int nbPlace, String loglat) {
+        this.id = id;
+        this.startCity = startCity;
+        this.targetCity = targetCity;
+        this.addrese = addrese;
+        this.dateTime = dateTime;
+        this.state = state;
+        User_id = user_id;
+        this.nbPlace = nbPlace;
+        this.loglat = loglat;
+    }
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getStartCity() {
+        return startCity;
+    }
+
+    public void setStartCity(String startCity) {
+        this.startCity = startCity;
+    }
+
+    public String getTargetCity() {
+        return targetCity;
+    }
+
+    public void setTargetCity(String targetCity) {
+        this.targetCity = targetCity;
+    }
+
+    public String getAddrese() {
+        return addrese;
+    }
+
+    public void setAddrese(String addrese) {
+        this.addrese = addrese;
+    }
+
+    public Date getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(Date dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+
+    public int getUser_id() {
+        return User_id;
+    }
+
+    public void setUser_id(int user_id) {
+        User_id = user_id;
+    }
+
+    public int getNbPlace() {
+        return nbPlace;
+    }
+
+    public void setNbPlace(int nbPlace) {
+        this.nbPlace = nbPlace;
+    }
+
+    public String getLoglat() {
+        return loglat;
+    }
+
+    public void setLoglat(String loglat) {
+        this.loglat = loglat;
+    }
+
+    @Override
+    public String toString() {
+        return "Offer{" +
+                "id=" + id +
+                ", startCity='" + startCity + '\'' +
+                ", targetCity='" + targetCity + '\'' +
+                ", addrese='" + addrese + '\'' +
+                ", dateTime=" + dateTime +
+                ", state=" + state +
+                ", User_id=" + User_id +
+                ", nbPlace=" + nbPlace +
+                ", loglat='" + loglat + '\'' +
+                '}';
+    }
+}
