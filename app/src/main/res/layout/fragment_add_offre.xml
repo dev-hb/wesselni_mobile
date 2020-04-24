@@ -1,119 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
     tools:context=".AddOffreFragment"
-    android:background="@drawable/login_bk"
     >
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:gravity="center"
-        android:padding="20dp"
         >
 
-        <TableRow
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center">
 
-            <TextView
-                android:id="@+id/textViewStartCity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lieu de départ :" />
 
-            <EditText
-                android:id="@+id/editTextStartCity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="city" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="5dp">
 
-        </TableRow>
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Depart" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+                <Spinner
+                    android:id="@+id/spinnerStarCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/textViewTargetCity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Destination:" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="5dp">
 
-            <EditText
-                android:id="@+id/editTextTargetCity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="city" />
+                <TextView
+                    android:id="@+id/distination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Destination" />
 
-        </TableRow>
+                <Spinner
+                    android:id="@+id/spinnerTargetCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-            <TextView
-                android:id="@+id/textViewAdress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Adresse:" />
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="adress" />
 
-            <EditText
-                android:id="@+id/editTextAdress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="adress"
-                android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/editTextAdress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="adress"
+                    android:inputType="textPersonName" />
+            </TableRow>
 
-        </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="prix" />
 
-            <TextView
-                android:id="@+id/textViewPrix"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Prix" />
+                <EditText
+                    android:id="@+id/editTextPrix"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Prix"
+                    android:inputType="number" />
 
-            <EditText
-                android:id="@+id/editTextPrix"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Prix"
-                android:inputType="number" />
-        </TableRow>
+            </TableRow>
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-            <TextView
-                android:id="@+id/textViewDateTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DateTime" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="date de depart" />
 
                 <EditText
                     android:id="@+id/editTextDate"
@@ -122,40 +116,57 @@
                     android:ems="10"
                     android:hint="dd/mm/aaaa"
                     android:inputType="date" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="heure" />
 
                 <EditText
                     android:id="@+id/editTextTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="30"
-                    android:ems="10"
 
+                    android:ems="10"
                     android:hint="hh:mm:yyyyy"
                     android:inputType="time" />
-            </LinearLayout>
+            </TableRow>
 
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-        </TableRow>
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Position" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+                <EditText
+                    android:id="@+id/editTextPosition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="12.00000,32.154870"
+                    android:inputType="text" />
+            </TableRow>
+        </TableLayout>
 
-            <TextView
-                android:id="@+id/textViewPosition"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Position" />
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/buttonAddOffre"
+            style="@style/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </LinearLayout>
 
-            <EditText
-                android:id="@+id/editTextPosition"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="12.00000,32.154870"
-                android:inputType="text" />
-        </TableRow>
-
-    </TableLayout>
 </FrameLayout>
