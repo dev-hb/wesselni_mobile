@@ -33,8 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin=(Button) findViewById(R.id.btnLogin);
         progressBar=(ProgressBar) findViewById(R.id.progressBar);
 
-        editTextLogin.setText("goulzimaamin@gmail.com");
-        editTextPassword.setText("azerty123");
+        editTextLogin.setText("zakaria.hba.97@gmail.com");
+        editTextPassword.setText("hba7222000");
 
 
     }
