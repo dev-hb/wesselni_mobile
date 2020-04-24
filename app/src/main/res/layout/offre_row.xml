@@ -45,17 +45,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:gravity="center|right"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewState_row_offre"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/imageView_row_offre"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="20dp"
-            android:gravity="right"
-            android:text="Active" />
+            app:srcCompat="@drawable/ic_bubble_chart_black_24dp"
+            android:layout_marginTop="30dp"
+            />
     </LinearLayout>
 
 </LinearLayout>
