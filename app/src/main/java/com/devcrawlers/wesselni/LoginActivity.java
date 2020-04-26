@@ -33,8 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin=(Button) findViewById(R.id.btnLogin);
         progressBar=(ProgressBar) findViewById(R.id.progressBar);
 
-        editTextLogin.setText("zakaria.hba.97@gmail.com");
-        editTextPassword.setText("hba7222000");
+        editTextLogin.setText("anas.devriani@gmail.com");
+        editTextPassword.setText("hacker 2018");
 
 
     }
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
                        SharedPreferences sharedPref = getSharedPreferences("tokenRef",Context.MODE_PRIVATE);
                         String token=sharedPref.getString("token","null");
-                      // Toast.makeText(LoginActivity.this,"You connected sexesFully"+token,Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this,"You connected sexesFully"+token,Toast.LENGTH_LONG).show();
 
                        Intent it=new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(it);
@@ -113,4 +113,5 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PasswordResetActivity.class);
         startActivity(intent);
     }
+
 }
