@@ -88,7 +88,8 @@ public class AddOffreFragment extends Fragment {
             public void onFinish(String reponse) {
                 Log.wtf("citys----",reponse);
                 try{
-                    JSONArray jsonArray=new JSONArray(reponse);
+                    JSONObject jsonObjectCitys=new JSONObject(reponse);
+                    JSONArray jsonArray=jsonObjectCitys.getJSONArray("cities");
                     JSONObject js;
                     for(int i=0;i<jsonArray.length();i++){
                         js=jsonArray.getJSONObject(i);
