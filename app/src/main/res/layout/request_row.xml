@@ -34,11 +34,6 @@
             android:textSize="15dp"
             android:text="02/11/2020 02:30" />
 
-        <TextView
-            android:id="@+id/textViewAddress_row_request"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Addresse" />
 
     </LinearLayout>
 
