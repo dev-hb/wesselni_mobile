@@ -8,19 +8,23 @@ public class Request {
     private Date startdateTime, enddateTime;
     private boolean state;
     private int user_id,nbPlace;
-    private String loglat;
 
 
-    public Request(int id, String startCity, String targetCity, Date startdateTime, Date enddateTime, boolean state, int user_id, int nbPlace, String loglat) {
+
+    public Request(int id, String startCity, String targetCity, Date startdateTime, Date enddateTime, int state, int user_id, int nbPlace) {
         this.id = id;
         this.startCity = startCity;
         this.targetCity = targetCity;
         this.startdateTime = startdateTime;
         this.enddateTime = enddateTime;
-        this.state = state;
+        if (state==1){
+            this.state = true;
+        }else {
+            this.state = false;
+        }
+
         this.user_id = user_id;
         this.nbPlace = nbPlace;
-        this.loglat = loglat;
     }
 
     public int getId() {
@@ -87,13 +91,6 @@ public class Request {
         this.nbPlace = nbPlace;
     }
 
-    public String getLoglat() {
-        return loglat;
-    }
-
-    public void setLoglat(String loglat) {
-        this.loglat = loglat;
-    }
 
     @Override
     public String toString() {
@@ -105,8 +102,7 @@ public class Request {
                 ", enddateTime=" + enddateTime +
                 ", state=" + state +
                 ", user_id=" + user_id +
-                ", nbPlace=" + nbPlace +
-                ", loglat='" + loglat + '\'' +
+                ", nbPlace=" + nbPlace + '\'' +
                 '}';
     }
 }

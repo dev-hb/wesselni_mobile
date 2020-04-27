@@ -9,11 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import com.devcrawlers.wesselni.connection.DataConnection;
 import com.devcrawlers.wesselni.connection.Provider;
 import com.devcrawlers.wesselni.entities.Request;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -25,6 +28,8 @@ import java.util.Date;
 public class RequestFragment extends Fragment {
     private ListView listViewOffre;
     private ArrayList<Request> requestArrayList;
+    private FloatingActionButton floatingActionButton;
+    ProgressBar progressBar;
 
     public RequestFragment() {
         // Required empty public constructor
@@ -35,13 +40,26 @@ public class RequestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View myInflater = inflater.inflate(R.layout.fragment_request, container, false);
+
+        progressBar = (ProgressBar) myInflater.findViewById(R.id.progressBarRequest);
         listViewOffre = (ListView) myInflater.findViewById(R.id.listtViewRequest);
         requestArrayList=new ArrayList<>();
-        getOffres();
+        getRequests();
+
+        floatingActionButton=(FloatingActionButton) myInflater.findViewById(R.id.floatingActionButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fragmentTransaction=getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment,new AddRequestFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
         return myInflater;
     }
 
-    public void getOffres() {
+    public void getRequests() {
 
         DataConnection dataConnection = new DataConnection(getActivity(), Provider.url,Provider.requestSubUrl, DataConnection.Method.GET,DataConnection.Header.TEXT) {
             @Override
@@ -51,7 +69,7 @@ public class RequestFragment extends Fragment {
 
             @Override
             public void after() {
-
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -66,9 +84,8 @@ public class RequestFragment extends Fragment {
                         Date sdt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(sj.getString("startdateTime"));
                         Date edt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(sj.getString("enddateTime"));
                         requestArrayList.add(new Request(sj.getInt("id"), sj.getJSONObject("startcity").getString("name"),
-                                sj.getJSONObject("targetcity").getString("name"), sdt,edt,sj.getBoolean("state"),
-                                 sj.getInt("user_id"), sj.getInt("nbplace"),
-                                sj.getString("latLong")));
+                                sj.getJSONObject("targetcity").getString("name"), sdt,edt,sj.getInt("state"),
+                                 sj.getInt("user_id"), sj.getInt("nb_place")));
                     }
                     RequestAdabter requestAdabter=new RequestAdabter(requestArrayList,getActivity());
                     listViewOffre.setAdapter(requestAdabter);
