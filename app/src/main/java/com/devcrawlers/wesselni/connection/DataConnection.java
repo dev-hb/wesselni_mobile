@@ -3,6 +3,7 @@ package com.devcrawlers.wesselni.connection;
 import android.app.DownloadManager;
 import android.content.ContentValues;
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -26,6 +27,7 @@ public abstract class DataConnection {
         ;
         public static final int GET = Request.Method.GET;
         public static final int POST = Request.Method.POST;
+        public static final int PUT = Request.Method.PUT;
     }
 
     //data type.
@@ -127,7 +129,9 @@ public abstract class DataConnection {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
+                            Log.wtf("----> Error " , error.getMessage());
                             if(error.networkResponse!=null){
+
                                 onError(new String(error.networkResponse.data));
                             }else{
                                 onError(error.getMessage());
@@ -143,6 +147,7 @@ public abstract class DataConnection {
                     AppHeader.put("Content-Type", "application/json; charset=utf-8");
                     return AppHeader;
                 }
+
 
             };
             before();

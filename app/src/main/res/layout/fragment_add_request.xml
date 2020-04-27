@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".AddOffreFragment"
+    tools:context=".AddRequestFragment"
     >
 
     <LinearLayout
@@ -58,44 +58,43 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
 
                 <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="adress" />
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="date Debut" />
 
                 <EditText
-                    android:id="@+id/editTextAdress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="adress"
-                    android:inputType="textPersonName" />
+                        android:id="@+id/editTextStartDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="dd/mm/aaaa"
+                        android:inputType="date" />
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
 
                 <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="prix" />
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Heure Debut" />
 
                 <EditText
-                    android:id="@+id/editTextPrix"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Prix"
-                    android:inputType="number" />
-
+                        android:id="@+id/editTextStartTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="hh:mm:yyyyy"
+                        android:inputType="time" />
             </TableRow>
 
             <TableRow
@@ -107,10 +106,10 @@
                     android:id="@+id/textView12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="date de depart" />
+                    android:text="date Fin" />
 
                 <EditText
-                    android:id="@+id/editTextDate"
+                    android:id="@+id/editTextEndDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -127,13 +126,12 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="heure" />
+                    android:text="Heure Fin" />
 
                 <EditText
-                    android:id="@+id/editTextTime"
+                    android:id="@+id/editTextEndTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:ems="10"
                     android:hint="hh:mm:yyyyy"
                     android:inputType="time" />
@@ -148,21 +146,21 @@
                     android:id="@+id/textView14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Position" />
+                    android:text="Place" />
 
                 <EditText
-                    android:id="@+id/editTextPosition"
+                    android:id="@+id/editTextNbPlace"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="12.00000,32.154870"
-                    android:inputType="text" />
+                    android:text="1"
+                    android:inputType="number" />
             </TableRow>
         </TableLayout>
 
         <Button
             android:layout_gravity="center"
-            android:id="@+id/buttonAddOffre"
+            android:id="@+id/buttonAddRequest"
             style="@style/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

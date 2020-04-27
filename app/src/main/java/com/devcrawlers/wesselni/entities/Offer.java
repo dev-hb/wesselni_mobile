@@ -9,8 +9,9 @@ public class Offer {
     private boolean state;
     private int User_id,nbPlace;
     private String loglat;
+    private double prix;
 
-    public Offer(int id, String startCity, String targetCity, String addrese, Date dateTime, boolean state, int user_id, int nbPlace, String loglat) {
+    public Offer(int id, String startCity, String targetCity, String addrese, Date dateTime, boolean state, int user_id, int nbPlace, String loglat,double prix) {
         this.id = id;
         this.startCity = startCity;
         this.targetCity = targetCity;
@@ -20,9 +21,16 @@ public class Offer {
         User_id = user_id;
         this.nbPlace = nbPlace;
         this.loglat = loglat;
+        this.prix=prix;
     }
 
+    public double getPrix() {
+        return prix;
+    }
 
+    public void setPrix(double prix) {
+        this.prix = prix;
+    }
 
     public int getId() {
         return id;
