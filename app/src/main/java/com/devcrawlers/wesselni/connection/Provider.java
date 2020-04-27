@@ -8,4 +8,5 @@ public interface Provider {
     public String profileUrl="user";
     public String usersSubUrl="users/";
     public String citysSubUrl="cities";
+    
 }
