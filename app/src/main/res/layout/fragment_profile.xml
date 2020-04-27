@@ -81,7 +81,7 @@
                             android:layout_height="30dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5sp"
-                            android:src="@drawable/stamp" />
+                            android:src="@drawable/user" />
 
                         <TextView
                             android:id="@+id/value_rating"

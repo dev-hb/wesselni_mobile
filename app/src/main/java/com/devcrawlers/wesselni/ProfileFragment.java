@@ -161,7 +161,7 @@ public class ProfileFragment extends Fragment {
                     phone.setText(userObject.getString("phone"));
                     if(userObject.getString("state").equals("NV")){
                         valid_text_view.setText("Invalide");
-                        valid_icon.setImageResource(R.drawable.employee);
+                        valid_icon.setImageResource(R.drawable.user);
                     }
                     ArrayAdapter arrayAdapter;
                     String acType = userObject.getString("account_type");
