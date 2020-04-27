@@ -58,7 +58,7 @@ public class ProfileFragment extends Fragment {
     // This function is for retrieving user info from DB
     public void getAuthentifcatedUserInfo(){
         DataConnection dataConnection = new DataConnection(getActivity(), Provider.url, Provider.profileUrl,
-                DataConnection.Method.GET, DataConnection.Header.JSON) {
+                DataConnection.Method.GET, DataConnection.Header.TEXT) {
             @Override
             public void before() {
 
@@ -103,10 +103,11 @@ public class ProfileFragment extends Fragment {
             public void onError(String error) {
                 Log.wtf("hello",error);
             }
-        };
+            };
         SharedPreferences sharedPref = getActivity().getSharedPreferences("tokenRef", Context.MODE_PRIVATE);
         String token = sharedPref.getString("token", "kdk");
         dataConnection.addAppHearder("Authorization", "Bearer " + token);
+
         dataConnection.startConnection();
     }
 }

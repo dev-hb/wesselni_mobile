@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
@@ -95,7 +96,7 @@ public class OffreFragment extends Fragment {
                         offerArrayList.add(new Offer(sj.getInt("id"), sj.getJSONObject("startcity").getString("name"),
                                 sj.getJSONObject("targetcity").getString("name"), sj.getString("address"), dt,
                                 sj.getInt("state")==1?true:false, sj.getInt("user_id"), sj.getInt("nbplace"),
-                                sj.getString("latLong")));
+                                sj.getString("latLong"),sj.getDouble("prix")));
                     }
                     OfferAdabter offerAdabter=new OfferAdabter(offerArrayList,getActivity());
                     listViewOffre.setAdapter(offerAdabter);
@@ -119,46 +120,52 @@ public class OffreFragment extends Fragment {
 
     }
 
+    class OfferAdabter extends BaseAdapter {
 
+        ArrayList<Offer> offerArrayList;
+        Context context;
+
+        public OfferAdabter(ArrayList<Offer> offers,Context c) {
+            offerArrayList=offers;
+            context =c;
+        }
+
+        @Override
+        public int getCount() {
+            return offerArrayList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return offerArrayList.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View view, ViewGroup parent) {
+            Offer f=offerArrayList.get(position);
+            view=LayoutInflater.from(context).inflate(R.layout.offre_row, null);
+
+
+            ((TextView)view.findViewById(R.id.textViewCitys_row_offre)).setText(f.getStartCity()+"  a  "+f.getTargetCity());
+            ((TextView) view.findViewById(R.id.textViewAddress_row_offre)).setText(f.getAddrese());
+            ((TextView) view.findViewById(R.id.textViewDateTime_row_offre)).setText((new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(f.getDateTime()));
+            ImageView imageViewStaet=(ImageView) view.findViewById(R.id.imageView_row_offre);
+            imageViewStaet.setColorFilter(f.isState()==true?Color.parseColor("#2ecc71"):Color.parseColor("#e74c3c"));
+            view.setOnClickListener(v -> {
+                FragmentTransaction fragmentTransaction=getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment,new OffreDetails(f));
+                fragmentTransaction.commit();
+                Log.wtf("tag-----","hskhdksjdksjd");
+            });
+            return view;
+        }
+    }
 }
 
 
-class OfferAdabter extends BaseAdapter {
 
-    ArrayList<Offer> offerArrayList;
-    Context context;
-
-    public OfferAdabter(ArrayList<Offer> offers,Context c) {
-        offerArrayList=offers;
-        context =c;
-    }
-
-    @Override
-    public int getCount() {
-        return offerArrayList.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return offerArrayList.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public View getView(int position, View view, ViewGroup parent) {
-        Offer f=offerArrayList.get(position);
-        view=LayoutInflater.from(context).inflate(R.layout.offre_row, null);
-
-
-        ((TextView)view.findViewById(R.id.textViewCitys_row_offre)).setText(f.getStartCity()+"  a  "+f.getTargetCity());
-        ((TextView) view.findViewById(R.id.textViewAddress_row_offre)).setText(f.getAddrese());
-        ((TextView) view.findViewById(R.id.textViewDateTime_row_offre)).setText((new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(f.getDateTime()));
-        ImageView imageViewStaet=(ImageView) view.findViewById(R.id.imageView_row_offre);
-        imageViewStaet.setColorFilter(f.isState()==true?Color.parseColor("#2ecc71"):Color.parseColor("#e74c3c"));
-        return view;
-    }
-}
