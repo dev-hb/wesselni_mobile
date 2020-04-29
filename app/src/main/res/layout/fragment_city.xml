@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/city_header_bg"
+                android:padding="28dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/login_bk" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/city_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="----------"
+                        android:textColor="@color/whiteTextColor"
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:id="@+id/city_hab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="----- hab"
+                        android:textColor="#e4e4e4"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Les offres"
+                        android:textColor="#fff"
+                        android:textSize="16dp" />
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/city_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="12dp"
+                            android:text="-- départs"
+                            android:textColor="#e7e7e7"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/city_target"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-- arrivées"
+                            android:textColor="#e7e7e7"
+                            android:textSize="18dp" />
+                    </TableRow>
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Dérniers offres de départ"
+                android:textSize="20dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBarStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="visible" />
+
+            <ListView
+                android:id="@+id/listtViewOffreStart"
+                android:layout_width="wrap_content"
+                android:layout_height="212dp"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Dérniers offres d'arrivée"
+                android:textSize="20dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBarTarget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="visible" />
+
+            <ListView
+                android:id="@+id/listtViewOffreTarget"
+                android:layout_width="wrap_content"
+                android:layout_height="211dp"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Informations sur la ville"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/city_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="14dp"
+                android:padding="8dp"
+                android:text="description ici"/>
+
+            <Button
+                android:id="@+id/city_more_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plus d'info"
+                android:background="#5a88ca"
+                android:layout_margin="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/whiteTextColor"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+
+</ScrollView>
