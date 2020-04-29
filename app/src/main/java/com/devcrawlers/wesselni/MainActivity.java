@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
         fab.setVisibility(View.INVISIBLE);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity
                 //Log.i(TAG, "onDrawerStateChanged");
             }
         });
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment,new TheRealHomeFragment());
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -110,7 +114,7 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         if (id == R.id.nav_home) {
-            transaction.replace(R.id.nav_host_fragment, new HomeFragment());
+            transaction.replace(R.id.nav_host_fragment, new TheRealHomeFragment());
         } else if (id == R.id.nav_profile) {
             transaction.replace(R.id.nav_host_fragment, new ProfileFragment());
         } else if (id == R.id.nav_offer) {

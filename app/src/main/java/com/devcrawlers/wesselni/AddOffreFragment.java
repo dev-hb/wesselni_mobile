@@ -113,7 +113,7 @@ public class AddOffreFragment extends Fragment {
 
 
                 }catch (Exception e){
-
+                    e.printStackTrace();
                 }
             }
 
