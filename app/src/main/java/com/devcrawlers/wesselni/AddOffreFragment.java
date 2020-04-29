@@ -1,6 +1,7 @@
 package com.devcrawlers.wesselni;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import com.devcrawlers.wesselni.connection.DataConnection;
@@ -36,9 +38,11 @@ import javax.microedition.khronos.egl.EGLDisplay;
 
 public class AddOffreFragment extends Fragment {
 
-    private EditText editTextAdress,editTextPrix,editTextDate,editTextTime,editTextPosition;
+    private EditText editTextAdress,editTextPrix,editTextDate,editTextTime;
+    public static EditText editTextPosition;
     private Spinner spinnerStartCity,spinnerTargetCity;
     private Button buttonAddOffre;
+    private ImageButton imageButtonPosition;
     private ArrayList<City> arrayListCitys;
 
     public AddOffreFragment() {
@@ -58,8 +62,14 @@ public class AddOffreFragment extends Fragment {
         editTextTime=view.findViewById(R.id.editTextTime);
         editTextPrix=view.findViewById(R.id.editTextPrix);
         editTextPosition=view.findViewById(R.id.editTextPosition);
+        editTextPosition.setEnabled(false);
         arrayListCitys=new ArrayList<>();
         buttonAddOffre=view.findViewById(R.id.buttonAddOffre);
+        imageButtonPosition=(ImageButton) view.findViewById(R.id.imageButtonPosition);
+        imageButtonPosition.setOnClickListener(v -> {
+            Intent intent=new Intent(getActivity(), MapsActivity.class);
+            getActivity().startActivity(intent);
+        });
         buttonAddOffre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

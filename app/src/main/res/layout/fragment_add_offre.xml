@@ -142,7 +142,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView14"
@@ -150,13 +151,27 @@
                     android:layout_height="wrap_content"
                     android:text="Position" />
 
-                <EditText
-                    android:id="@+id/editTextPosition"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="12.00000,32.154870"
-                    android:inputType="text" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editTextPosition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="12.00000,32.154870"
+                        android:inputType="none"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonPosition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_location_searching_black_24dp" />
+                </LinearLayout>
+
             </TableRow>
         </TableLayout>
 
