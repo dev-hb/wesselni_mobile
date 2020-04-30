@@ -42,9 +42,14 @@ public class OffreFragment extends Fragment {
     private ArrayList<Offer> offerArrayList;
     private FloatingActionButton floatingActionButton;
     ProgressBar progressBar;
+    private boolean aBoolean;
 
     public OffreFragment() {
         // Required empty public constructor
+    }
+
+    public OffreFragment(Boolean aBoolean){
+        this.aBoolean=aBoolean;
     }
 
 

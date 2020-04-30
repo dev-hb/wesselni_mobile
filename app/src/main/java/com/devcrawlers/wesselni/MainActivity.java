@@ -13,6 +13,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.devcrawlers.wesselni.connection.DataConnection;
+import com.devcrawlers.wesselni.connection.Provider;
 import com.devcrawlers.wesselni.ui.home.HomeFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -118,7 +120,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_profile) {
             transaction.replace(R.id.nav_host_fragment, new ProfileFragment());
         } else if (id == R.id.nav_offer) {
-            transaction.replace(R.id.nav_host_fragment, new OffreFragment());
+            transaction.replace(R.id.nav_host_fragment, new OffreFragment(true));
         }else if (id == R.id.nav_request) {
             transaction.replace(R.id.nav_host_fragment, new RequestFragment());
         }else if (id == R.id.nav_cities){
@@ -131,5 +133,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
 }

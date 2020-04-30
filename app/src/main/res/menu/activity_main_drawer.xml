@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_offer"
             android:icon="@drawable/ic_menu_send"
-            android:title="Offres"/>
+            android:title="Mes Offres"/>
         <item
             android:id="@+id/nav_request"
             android:icon="@drawable/ic_menu_send"

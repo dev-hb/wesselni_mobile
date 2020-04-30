@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,6 +63,11 @@ public class OffreDetails extends Fragment implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         Places.initialize(getActivity().getApplicationContext(),"AIzaSyBskA1YBZfvl9PQXmtFzRHMozuG9jCmZM0");
+        ((Button) view.findViewById(R.id.buttonPay)).setOnClickListener(v -> {
+            FragmentTransaction fragmentTransaction=getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,new ReservationFragment(offer));
+            fragmentTransaction.commit();
+        });
 
 
         return view;

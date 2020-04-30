@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.util.Date;
 public class TheRealHomeFragment extends Fragment {
 
     TextView date_text_view;
-    LinearLayout complaint;
+    LinearLayout complaint,linearLayoutOffre;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,6 +36,12 @@ public class TheRealHomeFragment extends Fragment {
                 Intent it=new Intent( getContext(),ComplaintsActivity.class);
                 startActivity(it);
             }
+        });
+        linearLayoutOffre=(LinearLayout) view.findViewById(R.id.offrelayout);
+        linearLayoutOffre.setOnClickListener(v -> {
+            FragmentTransaction fragmentTransaction=getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,new OffreFragment());
+            fragmentTransaction.commit();
         });
 
         return view;
