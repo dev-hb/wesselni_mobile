@@ -101,7 +101,7 @@ public class OffreFragment extends Fragment {
                         offerArrayList.add(new Offer(sj.getInt("id"), sj.getJSONObject("startcity").getString("name"),
                                 sj.getJSONObject("targetcity").getString("name"), sj.getString("address"), dt,
                                 sj.getInt("state")==1?true:false, sj.getInt("user_id"), sj.getInt("nbplace"),
-                                sj.getString("latLong"),sj.getDouble("prix")));
+                                sj.getString("latLong"),sj.getDouble("prix"),sj.getInt("nbpaceRest")));
                     }
                     OfferAdabter offerAdabter=new OfferAdabter(offerArrayList,getActivity());
                     listViewOffre.setAdapter(offerAdabter);

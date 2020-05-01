@@ -9,9 +9,32 @@ public class Offer {
     private boolean state;
     private int User_id,nbPlace;
     private String loglat;
+    private int nbplaceResever;
     private double prix;
 
-    public Offer(int id, String startCity, String targetCity, String addrese, Date dateTime, boolean state, int user_id, int nbPlace, String loglat,double prix) {
+    public Offer(int id, String startCity, String targetCity, String addrese, Date dateTime, boolean state, int user_id, int nbPlace, String loglat,double prix,int nbplaceResever) {
+        this.id = id;
+        this.startCity = startCity;
+        this.targetCity = targetCity;
+        this.addrese = addrese;
+        this.dateTime = dateTime;
+        this.state = state;
+        User_id = user_id;
+        this.nbPlace = nbPlace;
+        this.loglat = loglat;
+        this.nbplaceResever=nbplaceResever;
+        this.prix=prix;
+    }
+
+    public int getNbplaceResever() {
+        return nbplaceResever;
+    }
+
+    public void setNbplaceResever(int nbplaceResever) {
+        this.nbplaceResever = nbplaceResever;
+    }
+
+    public Offer(int id, String startCity, String targetCity, String addrese, Date dateTime, boolean state, int user_id, int nbPlace, String loglat, double prix) {
         this.id = id;
         this.startCity = startCity;
         this.targetCity = targetCity;

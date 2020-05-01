@@ -42,7 +42,7 @@ public class ReservationFragment extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_reservation, container, false);
         editTextNbpalce=(EditText) view.findViewById(R.id.editTextNbPlace);
-        editTextNbpalce.setHint("il rest "+offer.getNbPlace()+" place dans cette voyage");
+        editTextNbpalce.setHint("il rest "+(offer.getNbPlace()-offer.getNbplaceResever())+" place dans cette voyage");
         buttonReserv=(Button) view.findViewById(R.id.buttonReserve);
         buttonReserv.setOnClickListener(v -> {
             validete();
@@ -52,7 +52,7 @@ public class ReservationFragment extends Fragment {
 
     public void validete(){
         if(Integer.parseInt(editTextNbpalce.getText().toString())>offer.getNbPlace()){
-            editTextNbpalce.setError("il rest "+offer.getNbPlace()+" place dans cette voyage");
+            editTextNbpalce.setError("il rest "+(offer.getNbPlace()-offer.getNbplaceResever())+" place dans cette voyage");
             return;
         }
         DataConnection dataConnection=new DataConnection(getActivity(), Provider.url,
