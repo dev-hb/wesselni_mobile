@@ -12,6 +12,7 @@ public class Offer {
     private int nbplaceResever;
     private double prix;
 
+    public Offer(){}
     public Offer(int id, String startCity, String targetCity, String addrese, Date dateTime, boolean state, int user_id, int nbPlace, String loglat,double prix,int nbplaceResever) {
         this.id = id;
         this.startCity = startCity;
@@ -140,5 +141,9 @@ public class Offer {
                 ", nbPlace=" + nbPlace +
                 ", loglat='" + loglat + '\'' +
                 '}';
+    }
+
+    public boolean comper(Offer offerKey) {
+        return startCity.toLowerCase().contains(offerKey.startCity.toLowerCase()) && targetCity.toLowerCase().contains(offerKey.targetCity.toLowerCase());
     }
 }

@@ -10,11 +10,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -41,16 +44,19 @@ public class OffreFragment extends Fragment {
     private ListView listViewOffre;
     private ArrayList<Offer> offerArrayList;
     private FloatingActionButton floatingActionButton;
+    private EditText editTextRecharche;
+    private EditText editTextRecharchetargetCity;
     ProgressBar progressBar;
-    private boolean aBoolean;
+    private int authUserid=0;
 
     public OffreFragment() {
         // Required empty public constructor
     }
 
-    public OffreFragment(Boolean aBoolean){
-        this.aBoolean=aBoolean;
+    public OffreFragment(int authUserid){
+        this.authUserid=authUserid;
     }
+
 
 
     @Override
@@ -60,7 +66,40 @@ public class OffreFragment extends Fragment {
         listViewOffre = (ListView) myInflater.findViewById(R.id.listtViewOffre);
 
         progressBar = (ProgressBar) myInflater.findViewById(R.id.progressBarOffer);
+        editTextRecharche=myInflater.findViewById(R.id.editTextRecharge);
+        editTextRecharchetargetCity=myInflater.findViewById(R.id.editTextRechargetargetCity);
+        editTextRecharche.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                searchOffres(editTextRecharche.getText().toString(),editTextRecharchetargetCity.getText().toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        editTextRecharchetargetCity.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                searchOffres(editTextRecharche.getText().toString(),editTextRecharchetargetCity.getText().toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         offerArrayList=new ArrayList<>();
         getOffres();
         floatingActionButton=(FloatingActionButton) myInflater.findViewById(R.id.floatingActionButton);
@@ -85,7 +124,12 @@ public class OffreFragment extends Fragment {
 
             @Override
             public void after() {
-                progressBar.setVisibility(View.GONE);
+                if(authUserid==0){
+                    progressBar.setVisibility(View.GONE);
+                    editTextRecharche.setVisibility(View.VISIBLE);
+                    editTextRecharchetargetCity.setVisibility(View.VISIBLE);
+                }
+
             }
 
             @Override
@@ -95,13 +139,22 @@ public class OffreFragment extends Fragment {
                     //JSONObject jsonObjectoffres = new JSONObject(reponse);
                     JSONArray jsonArrayOffers = new JSONArray(reponse);
                     JSONObject sj;
+                    Offer offreTmp;
                     for (int i = 0; i < jsonArrayOffers.length(); i++) {
                         sj = jsonArrayOffers.getJSONObject(i);
                         Date dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(sj.getString("dateTime"));
-                        offerArrayList.add(new Offer(sj.getInt("id"), sj.getJSONObject("startcity").getString("name"),
+                        offreTmp=new Offer(sj.getInt("id"), sj.getJSONObject("startcity").getString("name"),
                                 sj.getJSONObject("targetcity").getString("name"), sj.getString("address"), dt,
                                 sj.getInt("state")==1?true:false, sj.getInt("user_id"), sj.getInt("nbplace"),
-                                sj.getString("latLong"),sj.getDouble("prix"),sj.getInt("nbpaceRest")));
+                                sj.getString("latLong"),sj.getDouble("prix"),sj.getInt("nbpaceRest"));
+                        if(authUserid!=0){
+                            if(offreTmp.getUser_id()==authUserid){
+                                offerArrayList.add(offreTmp);
+                            }
+                        }else{
+                            offerArrayList.add(offreTmp);
+                        }
+
                     }
                     OfferAdabter offerAdabter=new OfferAdabter(offerArrayList,getActivity());
                     listViewOffre.setAdapter(offerAdabter);
@@ -122,6 +175,20 @@ public class OffreFragment extends Fragment {
         dataConnection.addAppHearder("Authorization", "Bearer " + token);
         dataConnection.startConnection();
 
+
+    }
+    public void searchOffres(String keyWrdStart,String keyWrdtarget){
+        ArrayList<Offer> offers=new ArrayList<>();
+        Offer offerKey=new Offer();
+        offerKey.setStartCity(keyWrdStart);
+        offerKey.setTargetCity(keyWrdtarget);
+        for(Offer of : offerArrayList){
+            if(of.comper(offerKey)){
+                offers.add(of);
+            }
+        }
+        OfferAdabter offerAdabter=new OfferAdabter(offers,getActivity());
+        listViewOffre.setAdapter(offerAdabter);
 
     }
 
