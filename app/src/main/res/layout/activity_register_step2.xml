@@ -3,7 +3,120 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/login_bk"
     android:layout_height="match_parent"
     tools:context=".RegisterStep2Activity">
+
+    <LinearLayout
+        android:id="@+id/step1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="8dp"
+        style="@style/loginCard"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/loginHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="20dp"
+            android:text="Valider\nVotre Compte" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="Téléphone" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="6"
+            android:inputType="textPhonetic"
+            android:text="212636184629"
+            android:hint="06..."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="15dp"
+            android:text="Entrer votre numéro de téléphone, on va vous envoyer un code de validation via SMS."
+            android:textColor="@color/primaryTextColor" />
+
+        <Button
+            android:id="@+id/sendVerificationCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/loginButton"
+            android:layout_gravity="right"
+            android:onClick="doSendVerificationCode"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="Envoyer" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/step2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="40dp"
+        android:visibility="gone"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="8dp"
+        style="@style/loginCard"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/loginHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="20dp"
+            android:text="Validation" />
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="Votre Email ?" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="6"
+            android:inputType="textEmailAddress"
+            android:hint="john@something.xyz"/>
+
+        <TextView
+            android:id="@+id/signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="15dp"
+            android:text="Entrer le code que vous avez recevoir sur téléphone"
+            android:onClick="goLogin"
+            android:textColor="@color/primaryTextColor" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/loginButton"
+            android:layout_gravity="right"
+            android:onClick="doValidateAccount"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="Valider" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

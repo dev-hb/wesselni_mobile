@@ -91,7 +91,7 @@ public class CitiesFragment extends Fragment {
             @Override
             public void onFinish(String reponse) {
                 try {
-                    JSONArray jsonArray = new JSONArray(reponse);
+                    JSONArray jsonArray = new JSONObject(reponse).getJSONArray("cities");
                     JSONObject sj;
                     for (int i = 0; i < jsonArray.length(); i++) {
                         sj = jsonArray.getJSONObject(i);
@@ -109,6 +109,7 @@ public class CitiesFragment extends Fragment {
                     citiesAdapter=new CitiesAdapter(citiesArrayList,getActivity());
                     listViewCities.setAdapter(citiesAdapter);
                 } catch (Exception e) {
+                    Log.d("token issss : ", token);
                     e.printStackTrace();
                 }
 

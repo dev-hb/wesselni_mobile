@@ -133,6 +133,8 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.nav_host_fragment, new RequestFragment());
         }else if (id == R.id.nav_cities){
             transaction.replace(R.id.nav_host_fragment, new CitiesFragment());
+        }else if (id == R.id.nav_settings){
+            transaction.replace(R.id.nav_host_fragment, new SettingsFragment(getSupportFragmentManager()));
         }
 
         transaction.commit();

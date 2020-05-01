@@ -64,4 +64,9 @@
         <item name="android:textColor">@color/whiteTextColor</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="settings_pager">
+        <item name="android:textColor">@color/whiteTextColor</item>
+        <item name="android:padding">10dp</item>
+    </style>
 </resources>
