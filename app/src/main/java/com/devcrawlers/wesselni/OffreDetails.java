@@ -63,10 +63,14 @@ public class OffreDetails extends Fragment implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         Places.initialize(getActivity().getApplicationContext(),"AIzaSyBskA1YBZfvl9PQXmtFzRHMozuG9jCmZM0");
-        ((Button) view.findViewById(R.id.buttonPay)).setOnClickListener(v -> {
-            FragmentTransaction fragmentTransaction=getActivity().getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.nav_host_fragment,new ReservationFragment(offer));
-            fragmentTransaction.commit();
+        Button buttonreserver=((Button) view.findViewById(R.id.buttonPay));
+
+        buttonreserver.setOnClickListener(v -> {
+            if(offer.isState()){
+                FragmentTransaction fragmentTransaction=getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment,new ReservationFragment(offer));
+                fragmentTransaction.commit();
+            }
         });
 
 
