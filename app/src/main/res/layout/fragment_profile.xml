@@ -63,11 +63,14 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="125dp"
-                    android:layout_margin="10dp"
                     android:layout_weight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp"
                     android:theme="@style/Theme.MaterialComponents.Light"
-                    app:cardBackgroundColor="#012336"
-                    app:cardElevation="12dp">
+                    app:cardBackgroundColor="#0C6491"
+                    app:cardElevation="10dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -108,8 +111,11 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="125dp"
-                    android:layout_margin="10dp"
                     android:layout_weight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     app:cardBackgroundColor="#0C6491"
                     app:cardElevation="10dp">
