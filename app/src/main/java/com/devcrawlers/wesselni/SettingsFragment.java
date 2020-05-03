@@ -48,10 +48,12 @@ public class SettingsFragment extends Fragment {
         private Context context;
 
         Fragment[] frags = new Fragment[]{
-                new GeneralSettingsFragment(), new SecuritySettingsFragment()
+                new GeneralSettingsFragment(),
+                new ProfileSettingsFragment(),
+                new SecuritySettingsFragment()
         };
         String[] titles = new String[]{
-                "General", "Security"
+                "Générale", "Profile", "Sécurité"
         };
 
         public ViewPagerAdapter(Context context, @NonNull FragmentManager fm) {
