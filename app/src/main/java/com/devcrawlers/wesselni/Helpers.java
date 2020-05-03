@@ -4,9 +4,15 @@ import android.widget.EditText;
 
 public class Helpers {
 
-    public static boolean empty_field(EditText...fields){
+    public boolean empty_field(EditText...fields){
         for(EditText field: fields){
             if(field.getText().toString().equals("")) return true;
+        } return false;
+    }
+
+    public boolean empty_strings(String...strings){
+        for(String s: strings){
+            if(s.equals("")) return true;
         } return false;
     }
 
