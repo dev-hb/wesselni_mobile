@@ -21,7 +21,7 @@ import java.util.Date;
 public class TheRealHomeFragment extends Fragment {
 
     TextView date_text_view;
-    LinearLayout complaint,linearLayoutOffre;
+    LinearLayout complaint,linearLayoutOffre, aboutUs;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,6 +35,14 @@ public class TheRealHomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent it=new Intent( getContext(),ComplaintsActivity.class);
                 startActivity(it);
+            }
+        });
+        aboutUs = view.findViewById(R.id.fragment_about_us);
+        aboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent aboutFragment = new Intent(getContext(),aboutUsActivity.class);
+                startActivity(aboutFragment);
             }
         });
         linearLayoutOffre=(LinearLayout) view.findViewById(R.id.offrelayout);

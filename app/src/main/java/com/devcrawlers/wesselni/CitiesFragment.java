@@ -77,7 +77,8 @@ public class CitiesFragment extends Fragment {
 
     public void getCities() {
 
-        DataConnection dataConnection = new DataConnection(getActivity(), Provider.url,Provider.citysSubUrl, DataConnection.Method.GET,DataConnection.Header.TEXT) {
+        DataConnection dataConnection = new DataConnection(getActivity(), Provider.url,Provider.citysSubUrl,
+                DataConnection.Method.GET,DataConnection.Header.TEXT) {
             @Override
             public void before() {
 
