@@ -9,7 +9,9 @@ public class Request {
     private boolean state;
     private int user_id,nbPlace;
 
+    public Request(){
 
+    }
 
     public Request(int id, String startCity, String targetCity, Date startdateTime, Date enddateTime, int state, int user_id, int nbPlace) {
         this.id = id;
@@ -104,5 +106,9 @@ public class Request {
                 ", user_id=" + user_id +
                 ", nbPlace=" + nbPlace + '\'' +
                 '}';
+    }
+
+    public boolean comper(Request requestKey) {
+        return startCity.toLowerCase().contains(requestKey.startCity.toLowerCase()) && targetCity.toLowerCase().contains(requestKey.targetCity.toLowerCase());
     }
 }

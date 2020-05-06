@@ -54,18 +54,12 @@ public class AddRequestFragment extends Fragment {
         arrayListCitys=new ArrayList<>();
         buttonAddRequest=view.findViewById(R.id.buttonAddRequest);
 
-        editTextStartDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePicker(editTextStartDate);
-            }
+        editTextStartDate.setOnClickListener(v -> {
+            showDatePicker(editTextStartDate);
         });
 
-        editTextEndDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        editTextEndDate.setOnClickListener(v -> {
                 showDatePicker(editTextEndDate);
-            }
         });
 
         editTextStartTime.setOnClickListener(new View.OnClickListener() {

@@ -130,9 +130,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_offer) {
             transaction.replace(R.id.nav_host_fragment, new OffreFragment(authUserId));
         }else if (id == R.id.nav_request) {
-            transaction.replace(R.id.nav_host_fragment, new RequestFragment());
+            transaction.replace(R.id.nav_host_fragment, new RequestFragment(authUserId));
         }else if (id == R.id.nav_cities){
             transaction.replace(R.id.nav_host_fragment, new CitiesFragment());
+        }else if (id == R.id.nav_complaint){
+            transaction.replace(R.id.nav_host_fragment, new ComplaintFragment(authUserId));
         }else if (id == R.id.nav_settings){
             transaction.replace(R.id.nav_host_fragment, new SettingsFragment(getSupportFragmentManager()));
         }

@@ -21,7 +21,7 @@ import java.util.Date;
 public class TheRealHomeFragment extends Fragment {
 
     TextView date_text_view;
-    LinearLayout complaint,linearLayoutOffre, aboutUs;
+    LinearLayout complaint,linearLayoutOffre, aboutUs,linearLayoutRequest;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,10 +51,13 @@ public class TheRealHomeFragment extends Fragment {
             fragmentTransaction.replace(R.id.nav_host_fragment,new OffreFragment());
             fragmentTransaction.commit();
         });
-
+        linearLayoutRequest=(LinearLayout) view.findViewById(R.id.requestlayout);
+        linearLayoutRequest.setOnClickListener(v -> {
+            FragmentTransaction fragmentTransaction=getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,new RequestFragment());
+            fragmentTransaction.commit();
+        });
         return view;
-
-
 }
 
 }

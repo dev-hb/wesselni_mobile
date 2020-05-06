@@ -19,7 +19,11 @@
         <item
             android:id="@+id/nav_request"
             android:icon="@drawable/ic_menu_send"
-            android:title="Demandes"/>
+            android:title="Mes Demandes"/>
+        <item
+                android:id="@+id/nav_complaint"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Mes Reclamations"/>
         <item
             android:id="@+id/nav_cities"
             android:icon="@drawable/address"
