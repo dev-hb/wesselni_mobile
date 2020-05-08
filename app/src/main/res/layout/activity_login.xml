@@ -101,8 +101,22 @@
             android:layout_gravity="right"
             android:layout_marginRight="60dp"
             android:visibility="gone"
-            android:layout_marginTop="20dp"
-            />
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ou bien"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_gravity="right"/>
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_with_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
