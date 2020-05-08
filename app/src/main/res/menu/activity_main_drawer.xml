@@ -10,19 +10,19 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/user"
+            android:icon="@drawable/profiel"
             android:title="Profile" />
         <item
             android:id="@+id/nav_offer"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/offres"
             android:title="Mes Offres"/>
         <item
             android:id="@+id/nav_request"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/demandes"
             android:title="Mes Demandes"/>
         <item
                 android:id="@+id/nav_complaint"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/reclamations"
                 android:title="Mes Reclamations"/>
         <item
             android:id="@+id/nav_cities"
