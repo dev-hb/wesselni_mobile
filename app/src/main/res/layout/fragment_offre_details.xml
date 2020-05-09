@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="344dp"
-            android:text="Payer"
+            android:text="Reserver"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
             tools:layout_editor_absoluteX="0dp" />
 

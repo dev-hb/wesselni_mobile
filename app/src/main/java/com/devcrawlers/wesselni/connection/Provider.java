@@ -12,4 +12,6 @@ public interface Provider {
     public String citysSubUrl="cities";
     public String complaintsSubUrl="complaints";
     public String reservationsSubUrl="reservations";
+    public String paymentUrl="http://192.168.1.6:99/";
+    public String paymentSubUrl="mobile";
 }

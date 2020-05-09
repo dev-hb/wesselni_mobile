@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.devcrawlers.wesselni.connection.DataConnection;
 import com.devcrawlers.wesselni.connection.Provider;
+import com.devcrawlers.wesselni.entities.User;
 import com.devcrawlers.wesselni.ui.home.HomeFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity
 
     private String TAG = "MainActivity";
     private int authUserId=0;
+
+    public static User AuthUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,7 +165,9 @@ public class MainActivity extends AppCompatActivity
             public void onFinish(String reponse) {
                 try{
                     JSONObject jsonObject=new JSONObject(reponse);
+                    JSONObject user=jsonObject.getJSONObject("user");
                     authUserId=jsonObject.getJSONObject("user").getInt("id");
+                    AuthUser=new User(authUserId,user.getString("firs_name"),user.getString("last_name"),user.getString("email"),user.getString("phone"));
                 }catch (Exception e){
                     e.printStackTrace();
                 }
