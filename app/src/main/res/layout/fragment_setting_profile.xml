@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personnalisez votre profil"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Switch
+        android:id="@+id/pref_last_published_offers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Afficher les dernières offres publiés" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Si vous activez cette fonctionnalité, vous trouverez un liste des dernières offres publiés dans votre profile, cette information vous permet de restez à jour et de savoir les dernières offres sans faire de recherche."
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="?android:attr/listDivider" />
+
+    <Switch
+        android:id="@+id/pref_last_published_requests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Afficher les dernières demandes publiés" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Après l'activation de cette fonctionnalité, vous pouvez consulter les dernières demandes de covoiturage publiés dans votre profile, cette information vous permet en tant que conducteur de trouvez facilement les demandes des clients sans faire des recherche."
+        />
+
+</LinearLayout>

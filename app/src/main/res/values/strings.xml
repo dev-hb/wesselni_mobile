@@ -1,9 +1,11 @@
 <resources>
+    <string name="google_auth_key">882301655683-73mtsagmgevfn4184jkg5debok5nqd18.apps.googleusercontent.com</string>
+
     <string name="app_name">Wesselni</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Wesselni</string>
+    <string name="nav_header_subtitle">Choisissez le trajet qui vous convient le mieux</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -31,4 +33,14 @@
         <item>Passager</item>
     </string-array>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_complaints">Reclamation</string>
+
+    <!-- About us activity -->
+    <string name="about_us">
+    Wesselni rassemble la plus large communauté de covoiturage au Maroc. L\'application
+    met en relation des conducteurs voyageant avec des places libres et des passagers se rendant dans la même
+    direction. Ils partagent un trajet et les frais qui y sont liés. Avec l\’intégration du paiement en ligne et des
+    modules de l\'Intelligence Artificielle, Wesselni souhaite devenir la place de marché de référence de la mobilité
+    partagée sur la route marocaine. Pratique, économique, conviviale et responsable, partout où il y a une route, il y a Wesselni.
+    </string>
 </resources>

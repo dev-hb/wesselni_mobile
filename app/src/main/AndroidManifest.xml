@@ -3,6 +3,7 @@
     package="com.devcrawlers.wesselni">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,23 +13,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".aboutUsActivity" />
+        <activity
+            android:name=".ComplaintsActivity"
+            android:label="@string/title_activity_complaints"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBskA1YBZfvl9PQXmtFzRHMozuG9jCmZM0" />
+
         <activity
             android:name=".MapsActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RegisterStep2Activity" />
         <activity android:name=".testAct" />
         <activity
@@ -43,8 +44,18 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".PasswordSetActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileCompletionActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

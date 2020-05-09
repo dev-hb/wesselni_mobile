@@ -8,31 +8,44 @@
     tools:context=".MapsActivity">
 
 
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MapsActivity" />
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
+
         <EditText
+            android:id="@+id/edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/edit_text"
-            android:hint="Enter Address"
-            android:padding="16dp"
-            android:drawablePadding="16dp"
-            android:gravity="center_vertical"
             android:alpha="0.8"
-            android:background="@android:drawable/editbox_background"
-            android:drawableLeft="@drawable/user"
+            android:background="@drawable/search_position_field"
+            android:drawableLeft="@drawable/gps"
+            android:drawablePadding="16dp"
+            android:textColor="#fff"
+            android:gravity="center_vertical"
+            android:hint="Enter Address"
+            android:textColorHint="#B5FFFFFF"
+            android:padding="16dp"
 
             />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:layout_weight="1"
+        android:textColor="#fff"
+        android:background="@drawable/search_position_field"
+        android:text="Choisir" />
+
 </RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paramètres générale"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Switch
+        android:id="@+id/gen_dark_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mode nuit" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Utilisez le mode nuit pour protéger votre yeux contre les reflèts de lumière bleu pandant la nuit."
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="?android:attr/listDivider" />
+
+
+</LinearLayout>

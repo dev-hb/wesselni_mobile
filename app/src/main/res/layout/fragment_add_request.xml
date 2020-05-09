@@ -36,6 +36,7 @@
                 <Spinner
                     android:id="@+id/spinnerStarCity"
                     android:layout_width="match_parent"
+                    android:spinnerMode="dropdown"
                     android:layout_height="wrap_content" />
             </TableRow>
 
@@ -73,6 +74,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:clickable="true"
                         android:hint="dd/mm/aaaa"
                         android:inputType="date" />
             </TableRow>
@@ -93,7 +97,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="hh:mm:yyyyy"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:hint="hh:mm:ss"
                         android:inputType="time" />
             </TableRow>
 
@@ -113,6 +120,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:clickable="true"
                     android:hint="dd/mm/aaaa"
                     android:inputType="date" />
             </TableRow>
@@ -133,7 +143,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="hh:mm:yyyyy"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:hint="hh:mm:ss"
                     android:inputType="time" />
             </TableRow>
 

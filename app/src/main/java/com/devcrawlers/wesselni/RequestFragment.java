@@ -3,18 +3,18 @@ package com.devcrawlers.wesselni;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.*;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import com.devcrawlers.wesselni.connection.DataConnection;
 import com.devcrawlers.wesselni.connection.Provider;
+import com.devcrawlers.wesselni.entities.Offer;
 import com.devcrawlers.wesselni.entities.Request;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.json.JSONArray;
@@ -26,15 +26,20 @@ import java.util.Date;
 
 
 public class RequestFragment extends Fragment {
-    private ListView listViewOffre;
+    private ListView listViewRequests;
     private ArrayList<Request> requestArrayList;
     private FloatingActionButton floatingActionButton;
+    private EditText searchStartCity;
+    private EditText searchTargetCity;
     ProgressBar progressBar;
+    private int authUserId=-1;
 
     public RequestFragment() {
         // Required empty public constructor
     }
-
+    public RequestFragment(int authUserId) {
+        this.authUserId=authUserId;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +47,42 @@ public class RequestFragment extends Fragment {
         View myInflater = inflater.inflate(R.layout.fragment_request, container, false);
 
         progressBar = (ProgressBar) myInflater.findViewById(R.id.progressBarRequest);
-        listViewOffre = (ListView) myInflater.findViewById(R.id.listtViewRequest);
+        listViewRequests = (ListView) myInflater.findViewById(R.id.listtViewRequest);
+        searchStartCity=myInflater.findViewById(R.id.searchStartCity);
+        searchTargetCity=myInflater.findViewById(R.id.searchTargetCity);
+        searchStartCity.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                searchRequests(searchStartCity.getText().toString(),searchTargetCity.getText().toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        searchTargetCity.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                searchRequests(searchStartCity.getText().toString(),searchTargetCity.getText().toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         requestArrayList=new ArrayList<>();
         getRequests();
 
@@ -69,7 +109,11 @@ public class RequestFragment extends Fragment {
 
             @Override
             public void after() {
-                progressBar.setVisibility(View.GONE);
+                if(authUserId==-1){
+                    progressBar.setVisibility(View.GONE);
+                    searchStartCity.setVisibility(View.VISIBLE);
+                    searchTargetCity.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
@@ -79,16 +123,24 @@ public class RequestFragment extends Fragment {
                     //JSONObject jsonObjectoffres = new JSONObject(reponse);
                     JSONArray jsonArrayRequests = new JSONArray(reponse);
                     JSONObject sj;
+                    Request re;
                     for (int i = 0; i < jsonArrayRequests.length(); i++) {
                         sj = jsonArrayRequests.getJSONObject(i);
                         Date sdt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(sj.getString("startdateTime"));
                         Date edt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(sj.getString("enddateTime"));
-                        requestArrayList.add(new Request(sj.getInt("id"), sj.getJSONObject("startcity").getString("name"),
+                        re=new Request(sj.getInt("id"), sj.getJSONObject("startcity").getString("name"),
                                 sj.getJSONObject("targetcity").getString("name"), sdt,edt,sj.getInt("state"),
-                                 sj.getInt("user_id"), sj.getInt("nb_place")));
+                                 sj.getInt("user_id"), sj.getInt("nb_place"));
+                        if(authUserId!=-1){
+                            if(re.getUser_id()==authUserId){
+                                requestArrayList.add(re);
+                            }
+                        }else{
+                            requestArrayList.add(re);
+                        }
                     }
                     RequestAdabter requestAdabter=new RequestAdabter(requestArrayList,getActivity());
-                    listViewOffre.setAdapter(requestAdabter);
+                    listViewRequests.setAdapter(requestAdabter);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -108,7 +160,20 @@ public class RequestFragment extends Fragment {
 
 
     }
+    public void searchRequests(String keyWrdStart,String keyWrdtarget){
+        ArrayList<Request> requests=new ArrayList<>();
+        Request requestKey=new Request();
+        requestKey.setStartCity(keyWrdStart);
+        requestKey.setTargetCity(keyWrdtarget);
+        for(Request re : requestArrayList){
+            if(re.comper(requestKey)){
+                requests.add(re);
+            }
+        }
+        RequestAdabter requestAdabter=new RequestAdabter(requests,getActivity());
+        listViewRequests.setAdapter(requestAdabter);
 
+    }
 
 }
 

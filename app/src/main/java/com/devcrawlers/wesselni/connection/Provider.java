@@ -6,7 +6,10 @@ public interface Provider {
     public String offerSubUrl="offers";
     public String requestSubUrl="request";
     public String profileUrl="user";
+    public String updatePwd ="update_pwd";
+    public String checkUserExistance ="is_user_exists";
     public String usersSubUrl="users/";
     public String citysSubUrl="cities";
-    
+    public String complaintsSubUrl="complaints";
+    public String reservationsSubUrl="reservations";
 }
