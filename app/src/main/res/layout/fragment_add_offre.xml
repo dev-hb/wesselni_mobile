@@ -1,37 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/fragment_complain_background"
+
     tools:context=".AddOffreFragment"
     >
 
-
     <LinearLayout
+        android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:paddingTop="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="2dp"
         android:orientation="vertical"
         android:gravity="center"
         >
 
-
-
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:text="Depart" />
         <Spinner
             android:id="@+id/spinnerStarCity"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:backgroundTint="#ff0000"
+            android:textColor="#2196F3"
+            android:backgroundTint="#2196F3"
             android:overlapAnchor="false"
             android:spinnerMode="dropdown"
             />
@@ -39,13 +44,15 @@
             android:id="@+id/distination"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:text="Destination" />
 
         <Spinner
             android:id="@+id/spinnerTargetCity"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:backgroundTint="#ff0000"
+            android:textColor="#fff"
+            android:backgroundTint="#2196F3"
             android:overlapAnchor="false"
             android:spinnerMode="dropdown"
             />
@@ -53,12 +60,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:textColorHint="#56FFFFFF"
             android:hint="Adresse">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextAdress"
+                android:backgroundTint="#03A9F4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:drawableLeft="@drawable/address"
                 android:drawablePadding="10dp" />
 
@@ -68,11 +78,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:textColorHint="#56FFFFFF"
             android:hint="Prix">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPrix"
                 android:layout_width="match_parent"
+                android:backgroundTint="#03A9F4"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/business"
                 android:drawablePadding="10dp"
@@ -83,12 +95,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="#56FFFFFF"
             android:layout_marginBottom="10dp"
             android:hint="Nomber de place">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextNbPlace"
                 android:layout_width="match_parent"
+                android:backgroundTint="#03A9F4"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/name"
                 android:drawablePadding="10dp"
@@ -97,7 +111,6 @@
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -105,33 +118,33 @@
             android:id="@+id/textinputDate"
             android:hint="Date">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/dateoffre"
-                android:drawablePadding="10dp"
-                android:clickable="true"
-                android:cursorVisible="false"
-                android:focusable="false"
-                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#03A9F4"
+                    android:drawableLeft="@drawable/dateoffre"
+                    android:drawablePadding="10dp"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    >
 
-            </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:textColorHint="#56FFFFFF"
             android:hint="Heure">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#03A9F4"
                 android:drawableLeft="@drawable/ic_access_time_black_24dp"
                 android:drawablePadding="10dp"
                 android:clickable="true"
@@ -149,12 +162,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:textColorHint="#56FFFFFF"
             android:hint="Position">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPosition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#03A9F4"
                 android:drawableLeft="@drawable/address"
                 android:drawablePadding="10dp"
                 android:clickable="true"
@@ -169,10 +184,10 @@
         <Button
             android:layout_gravity="center"
             android:id="@+id/buttonAddOffre"
-            style="@style/loginButton"
+            style="@style/addComplaintButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:text="Ajouter" />
     </LinearLayout>
-</FrameLayout>
+</ScrollView>
