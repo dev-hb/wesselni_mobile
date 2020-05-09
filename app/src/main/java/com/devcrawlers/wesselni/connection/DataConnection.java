@@ -46,6 +46,7 @@ public abstract class DataConnection {
     private String header;//data header text or json
     private StringRequest stringRequest;
     private JsonObjectRequest jsonObjectRequest;
+    private String requistBody;
 
     public DataConnection(Context context, String subURL) {
         this.URL = Provider.url + subURL;
@@ -148,7 +149,6 @@ public abstract class DataConnection {
                     return AppHeader;
                 }
 
-
             };
             before();
             Volley.newRequestQueue(context).add(jsonObjectRequest);
@@ -157,6 +157,13 @@ public abstract class DataConnection {
 
     }
 
+    public String getRequistBody() {
+        return requistBody;
+    }
+
+    public void setRequistBody(String requistBody) {
+        this.requistBody = requistBody;
+    }
 
     public void setHeader(String header) {
         this.header = header;
@@ -183,4 +190,36 @@ public abstract class DataConnection {
 
     //when an error this methode will execute
     public abstract void onError(String error);
+
+
+    public void stripPaymentStart(){
+        stringRequest = new StringRequest(methode, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                onFinish(response);
+                after();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                onError(error.getMessage());
+                after();
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                AppHeader.put("Content-Type", "application/json; charset=utf-8");
+                return AppHeader;
+            }
+
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                return requistBody==null? null : requistBody.getBytes();
+            }
+        };
+        before();
+        Volley.newRequestQueue(context).add(stringRequest);
+    }
+
+
 }

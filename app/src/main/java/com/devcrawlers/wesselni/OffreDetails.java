@@ -67,9 +67,9 @@ public class OffreDetails extends Fragment implements OnMapReadyCallback {
 
         buttonreserver.setOnClickListener(v -> {
             if(offer.isState()){
-                FragmentTransaction fragmentTransaction=getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment,new ReservationFragment(offer));
-                fragmentTransaction.commit();
+                Intent intent=new Intent(getActivity(),ReservationActivity.class);
+                intent.putExtra("offre",offer);
+                startActivity(intent);
             }
         });
 

@@ -1,8 +1,9 @@
 package com.devcrawlers.wesselni.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Offer {
+public class Offer implements Serializable {
     private int id;
     private String startCity,targetCity,addrese;
     private Date dateTime;

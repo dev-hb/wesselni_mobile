@@ -44,8 +44,8 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin= findViewById(R.id.btnLogin);
         progressBar= findViewById(R.id.progressBar);
 
-        editTextLogin.setText("zakaria.hba.97@gmail.com");
-        editTextPassword.setText("hba7222000");
+        editTextLogin.setText("goulzimaamin@gmail.com");
+        editTextPassword.setText("azerty123");
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
