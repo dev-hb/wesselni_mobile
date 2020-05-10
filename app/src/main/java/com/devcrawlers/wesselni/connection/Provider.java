@@ -1,17 +1,21 @@
 package com.devcrawlers.wesselni.connection;
 
 public interface Provider {
-    public String publicUrl="http://192.168.1.20:99/uploads/files/";
-    public String url="http://192.168.1.20:99/api/";
-    public String offerSubUrl="offers";
-    public String requestSubUrl="request";
-    public String profileUrl="user";
-    public String updatePwd ="update_pwd";
-    public String checkUserExistance ="is_user_exists";
-    public String usersSubUrl="users/";
-    public String citysSubUrl="cities";
-    public String complaintsSubUrl="complaints";
-    public String reservationsSubUrl="reservations";
-    public String paymentUrl="http://192.168.1.6:99/";
-    public String paymentSubUrl="mobile";
+    String publicUrl = "http://192.168.1.6:99/uploads/files/";
+    String url = "http://192.168.1.6:99/api/";
+    String offerSubUrl = "offers";
+    String requestSubUrl = "request";
+    String profileUrl = "user";
+    String updatePwd = "update_pwd";
+    String checkUserExistance = "is_user_exists";
+    String usersSubUrl = "users/";
+    String citysSubUrl = "cities";
+    String complaintsSubUrl = "complaints";
+    String reservationsSubUrl = "reservations";
+    String paymentUrl="http://192.168.1.6:99/";
+    String paymentSubUrl="mobile";
+    String uploader = "upload";
+    String folder_images = "images";
+    String folder_avatars = "avatars";
+    String folder_cities = "cities";
 }

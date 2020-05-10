@@ -23,9 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Utilisez le mode nuit pour protéger votre yeux contre les reflèts de lumière bleu pandant la nuit."
-        />
-
+        android:text="Utilisez le mode nuit pour protéger votre yeux contre les reflèts de lumière bleu pandant la nuit." />
 
     <View
         android:layout_width="match_parent"
@@ -33,6 +31,5 @@
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:background="?android:attr/listDivider" />
-
 
 </LinearLayout>

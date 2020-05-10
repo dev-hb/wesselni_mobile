@@ -2,10 +2,13 @@ package com.devcrawlers.wesselni;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
+
+import com.devcrawlers.wesselni.connection.DataConnection;
+import com.devcrawlers.wesselni.connection.Provider;
+import com.devcrawlers.wesselni.connection.Uploader;
 
 public class testAct extends AppCompatActivity {
 
@@ -13,10 +16,7 @@ public class testAct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        SharedPreferences sharedPref = getSharedPreferences("tokenRef",Context.MODE_PRIVATE);
-    String token=sharedPref.getString("token","null");
-        Toast.makeText(testAct.this,"You connected sexesFully"+token,Toast.LENGTH_LONG).show();;
+    }
 
 
-}
 }
