@@ -27,6 +27,7 @@ import com.devcrawlers.wesselni.entities.Offer;
 
 import com.devcrawlers.wesselni.connection.DataConnection;
 import com.devcrawlers.wesselni.connection.Provider;
+import com.devcrawlers.wesselni.entities.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
@@ -143,9 +144,10 @@ public class OffreFragment extends Fragment {
                     for (int i = 0; i < jsonArrayOffers.length(); i++) {
                         sj = jsonArrayOffers.getJSONObject(i);
                         Date dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(sj.getString("dateTime"));
+                        JSONObject userJsonObject=sj.getJSONObject("user");
                         offreTmp=new Offer(sj.getInt("id"), sj.getJSONObject("startcity").getString("name"),
                                 sj.getJSONObject("targetcity").getString("name"), sj.getString("address"), dt,
-                                sj.getInt("state")==1?true:false, sj.getInt("user_id"), sj.getInt("nbplace"),
+                                sj.getInt("state")==1?true:false, new User(userJsonObject.getInt("id"),userJsonObject.getString("first_name"),userJsonObject.getString("last_name"),userJsonObject.getString("email"),userJsonObject.getString("phone")), sj.getInt("nbplace"),
                                 sj.getString("latLong"),sj.getDouble("prix"),sj.getInt("nbpaceRest"));
                         if(authUserid!=0){
                             if(offreTmp.getUser_id()==authUserid){

@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.Instrumentation;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -60,7 +61,6 @@ public class ReservationActivity extends AppCompatActivity {
         cardInputWidget=findViewById(R.id.stripeCardInputWidget);
         getUserId();
         buttonReserv.setOnClickListener(v -> {
-            validete();
             clientPayment();
         });
     }
@@ -115,7 +115,7 @@ public class ReservationActivity extends AppCompatActivity {
 
             @Override
             public void after() {
-                builder.dismiss();
+
             }
 
             @Override
@@ -240,13 +240,16 @@ public class ReservationActivity extends AppCompatActivity {
             if (status == PaymentIntent.Status.Succeeded) {
                 // Payment completed successfully
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                activity.validete();
+                activity.builder.dismiss();
                 activity.displayAlert(
                         "Payment completed",
-                        "Votre payment est bien effectuer",
+                        "Votre payment est bien effectuer\n le numero de votre condecteur :"+ activity.offer.getUser().getPhone()+"\n nom de condecteur :"+activity.offer.getUser().getFirsName()+" "+activity.offer.getUser().getLastName(),
                         true
                 );
             } else if (status == PaymentIntent.Status.RequiresPaymentMethod) {
                 // Payment failed – allow retrying using a different payment method
+                activity.builder.dismiss();
                 activity.displayAlert(
                         "Payment failed",
                         "votre payment est non pas effectuer",

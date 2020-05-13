@@ -12,6 +12,7 @@ public class Offer implements Serializable {
     private String loglat;
     private int nbplaceResever;
     private double prix;
+    private User user;
 
     public Offer(){}
     public Offer(int id, String startCity, String targetCity, String addrese, Date dateTime, boolean state, int user_id, int nbPlace, String loglat,double prix,int nbplaceResever) {
@@ -26,6 +27,27 @@ public class Offer implements Serializable {
         this.loglat = loglat;
         this.nbplaceResever=nbplaceResever;
         this.prix=prix;
+    }
+    public Offer(int id, String startCity, String targetCity, String addrese, Date dateTime, boolean state,User user, int nbPlace, String loglat,double prix,int nbplaceResever) {
+        this.id = id;
+        this.startCity = startCity;
+        this.targetCity = targetCity;
+        this.addrese = addrese;
+        this.dateTime = dateTime;
+        this.state = state;
+        this.user=user;
+        this.nbPlace = nbPlace;
+        this.loglat = loglat;
+        this.nbplaceResever=nbplaceResever;
+        this.prix=prix;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getNbplaceResever() {

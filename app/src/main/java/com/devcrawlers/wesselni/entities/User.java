@@ -9,7 +9,9 @@ import com.devcrawlers.wesselni.connection.Provider;
 
 import org.json.JSONObject;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private long id;
     private String firsName,lastName,email,phone;
 
