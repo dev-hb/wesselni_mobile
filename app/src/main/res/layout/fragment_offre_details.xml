@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="344dp"
             android:text="Reserver"
+            style="@style/addComplaintButton"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
             tools:layout_editor_absoluteX="0dp" />
 
@@ -25,9 +26,12 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#2383E9"
+            android:background="#053E7A"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -46,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="start City a target City"
-                    android:textColor="#000000"
+                    android:textColor="#fff"
                     android:textSize="20dp" />
 
                 <LinearLayout
@@ -64,10 +68,9 @@
                         android:id="@+id/textViewNbpl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nbpalce"
                         android:gravity="center"
-                        android:textColor="#E91E63"
-                        />
+                        android:text="Nbpalce"
+                        android:textColor="#2196F3" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -91,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="date and time"
-                android:textColor="#009688"
+                android:textColor="#3F51B5"
                 android:textSize="20dp" />
 
             <TextView
@@ -114,12 +117,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
-            <TextView
-                android:id="@+id/textViewAdress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Adresse"
-                android:textSize="20dp" />
+
 
             <fragment
                 android:id="@+id/map"
