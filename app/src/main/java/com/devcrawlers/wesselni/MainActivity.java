@@ -140,6 +140,8 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.nav_host_fragment, new ComplaintFragment(authUserId));
         }else if (id == R.id.nav_settings){
             transaction.replace(R.id.nav_host_fragment, new SettingsFragment(getSupportFragmentManager()));
+        }else if (id == R.id.nav_cars){
+            transaction.replace(R.id.nav_host_fragment, new CarsFragment());
         }
 
         transaction.commit();
