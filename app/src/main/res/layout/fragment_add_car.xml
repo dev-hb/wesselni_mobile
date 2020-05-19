@@ -5,130 +5,154 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".AddCarFragment"
+     android:orientation="vertical"
+     android:background="@drawable/fragment_complain_background"
+
+     tools:context=".AddCarFragment"
     >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        >
-
-        <TableLayout
+            android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-
-            <TableRow
+            android:layout_height="match_parent"
+            android:paddingTop="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="vertical"
+            android:gravity="center"
+        >
+        <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:padding="5dp">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#56FFFFFF"
+                android:hint="Matricule">
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Matricule" />
-
-                <EditText
-                        android:id="@+id/editTextIdNumber_car"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Matricule"
-                        android:inputType="text" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:padding="5dp">
-
-                <TextView
-                    android:id="@+id/distination"
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextIdNumber_car"
+                    android:backgroundTint="#03A9F4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Marque" />
+                    android:textColor="#fff"
+                    android:drawablePadding="10dp" />
 
-                <EditText
-                        android:id="@+id/editTextMark_car"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Marque"
-                        android:inputType="text" />
-            </TableRow>
 
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center">
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                        android:id="@+id/textView10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Module" />
 
-                <EditText
-                        android:id="@+id/editTextModel_car"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Module"
-                        android:inputType="text" />
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center">
-
-                <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Couleur" />
-
-                <EditText
-                        android:id="@+id/editTextColor_car"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:clickable="true"
-                        android:cursorVisible="false"
-                        android:focusable="false"
-                        android:hint="Couleur"/>
-            </TableRow>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center">
-
-                <TextView
-                        android:id="@+id/textView14"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Place" />
-
-                <EditText
-                        android:id="@+id/editTextNbPlace_car"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:text="1"
-                        android:inputType="number" />
-            </TableRow>
-
-            <TableRow
+        <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#56FFFFFF"
+                android:hint="Marque">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextMark_car"
+                    android:backgroundTint="#03A9F4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:drawablePadding="10dp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#56FFFFFF"
+                android:hint="Module">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextModel_car"
+                    android:backgroundTint="#03A9F4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:drawablePadding="10dp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#56FFFFFF"
+                android:hint="Couleur">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextColor_car"
+                    android:backgroundTint="#03A9F4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:drawablePadding="10dp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#56FFFFFF"
+                android:hint="Nombre de Places">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNbPlace_car"
+                    android:backgroundTint="#03A9F4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:text="1"
+                    android:inputType="number"
+                    android:drawablePadding="10dp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/uploadPicture_car"
+                    android:backgroundTint="#03A9F4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:text="Photo de Voiture"
+                    android:drawablePadding="10dp" />
+
+
+
+
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/uploadReCard_car"
+                    android:backgroundTint="#03A9F4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:layout_marginTop="5dp"
+                    android:text="photo de la carte grise"
+                    android:drawablePadding="10dp" />
+
+
+
+
+
+
+
+
+
+
+
                 <ImageView
                         android:id="@+id/pictureCar"
                         android:layout_width="20dp"
@@ -138,27 +162,9 @@
                         android:layout_marginBottom="10dp"
                         android:scaleType="fitXY"
                         android:visibility="gone"/>
-                <TextView
-                        android:id="@+id/textView12"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Photo" />
-                <Button
-                        android:id="@+id/uploadPicture_car"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginRight="40dp"
-                        android:padding="16dp"
-                        android:text="Upload Photo"
-                        android:textColor="#000"/>
 
-            </TableRow>
 
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center">
+
                 <ImageView
                         android:id="@+id/reCardCar"
                         android:layout_width="20dp"
@@ -169,30 +175,14 @@
                         android:scaleType="fitXY"
                         android:visibility="gone"/>
 
-                <TextView
-                        android:id="@+id/textView13"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Cart Grise" />
-                <Button
-                        android:id="@+id/uploadReCard_car"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginRight="40dp"
-                        android:padding="16dp"
-                        android:text="Upload Photo"
-                        android:textColor="#000"/>
-
-            </TableRow>
 
 
-        </TableLayout>
 
         <Button
             android:layout_gravity="center"
             android:id="@+id/buttonAddCar"
             style="@style/loginButton"
+            android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ajouter" />
